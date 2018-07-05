@@ -1,0 +1,266 @@
+/* You can add global styles to this file, and also import other style files */
+// Custom style for loading elements without height
+.will-load {
+    min-height: 80px;
+}
+// Href line height wasn't right for md-icon-button
+a[md-icon-button] {
+    line-height: 36px;
+}
+
+// Capitalize
+.text-capital {
+  text-transform: capitalize;
+}
+
+.load-more-btn {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+// Lighter font weight in sub-toolbars
+td-layout-manage-list .mat-toolbar {
+    font-weight: 400;
+}
+
+.m0 {
+	margin:0 !important;
+}
+
+.mb0 {
+	margin-bottom: 0 !important;
+}
+
+.pt0 {
+	padding-top: 0 !important;
+}
+
+.pb0 {
+	padding-bottom: 0 !important;
+}
+
+.md-sidenav-select-open {
+	width: 450px !important;
+}
+
+.md-sidenav-select-close {
+	width: 0px !important;
+	min-width: 0px !important;
+}
+
+md-sidenav-container {
+	height: 100%;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.print-section {
+    border: #000 1px solid;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+.barcode-name {
+    font-size: 10px;
+}
+
+.nav-dashboard-left-bucketapps {
+    .td-layout-manage-list-sidenav {
+        background-color: #34495e;  
+    }
+}
+
+.nav-content-left-bucketapps {
+    a.active {
+        .mat-list-item-content {
+            background: #233342;
+            // color: #fff;
+            color: rgba(255, 255, 255, 0.9);
+            mat-icon {
+                color: #2ccd70;
+            }
+        }
+    }
+    .mat-list-item-content{
+        color: #95a5a4;
+    }
+}
+
+.cut_text {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+    max-height: 120px;
+}
+
+mat-sidenav {
+    width: 70% !important;
+}
+
+.avatar {
+    flex-shrink: 0;
+    font-size: 24px;
+    box-sizing: content-box;
+    border-radius: 50%;
+    padding: 1px;
+    background: #c5c5c5;
+}
+
+.size35x35 {
+    width: 35px;
+    height: 35px;
+}
+
+.size70x70 {
+    width: 70px;
+    height: 70px;
+}
+
+.mat-tab-links {
+    .mat-tab-link {
+        color: #2d3e50 !important;
+        font-family: "Helvetica Neue", sans-serif;
+        font-weight: 700;
+        opacity: .8;
+    }
+    .mat-ink-bar {
+        height: 3px;
+        background-color: #00e676 !important;
+    }
+}
+
+.project-status {
+    border-radius: 4px;
+    color: #fff;
+    padding: 2px 8px;
+    font-size: 12px;
+}
+
+.nav-top-green-bucketapps {
+    background-color: #00e676 !important;
+    color: #fff !important;
+    height: 94px !important;
+    box-shadow: none !important;
+}
+
+.nav-top-white-bucketapps-buttons {
+    background-color: #fff !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid #f5f5f5;
+    .separator-buttons {
+        width: 5px;
+    }
+}
+
+.tag {
+    border-radius: 8px;
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 14px;
+    margin-right: 7px;
+    margin-top: 5px;
+    font-weight: 100;
+    mat-icon {
+        font-size: 18px;
+        cursor: pointer;
+    }
+    mat-icon:hover {
+        color: #000;
+        opacity: .7;
+    }
+    div {
+        margin-right: 5px;
+    }
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.radio-custom {
+    margin-bottom: 15px;
+    label {
+        font-size: 13px;
+        color: rgba(0, 0, 0, 0.54);
+        font-weight: 400;
+        line-height: 1.125;
+        font-family: "Helvetica Neue", sans-serif;
+    }
+    mat-list {
+        padding: 0;
+        .label {
+            margin-left: 10px;
+        }
+    }
+    mat-icon.inactive {
+        color: #f5f5f5 !important;
+    }
+    .project-status.inactive {
+        opacity: 0.3;
+    }
+}
+
+.no-shadow {
+    box-shadow: none !important;
+}
+
+.mat-dialog-container {
+    padding: 0px !important;
+}
+
+.info-block {
+    margin: 13px 0 0 0;
+    .title {
+        font-size: 12px;
+        color: #ccc;
+        margin-bottom: 4px;
+    }
+    .value {
+        opacity: .8;
+    }
+}
+
+.general-list {
+    mat-list-item {
+        mat-icon[mat-list-icon] {
+            color: #fff;
+        }
+    }
+    .quotation-title {
+        margin-right: 8px;
+    }
+    .location {
+        color: #ccc;
+        font-size: 12px;
+        margin-top: 2px;
+    }
+    .reference {
+        margin-top: 4px;
+    }
+    .description {
+        margin-top: 4px;
+    }
+    .item-quantity {
+        border-radius: 4px;
+        width: 30px;
+        color: #fff;
+        padding: 2px 8px;
+        font-size: 12px;
+        width: 21px;
+        text-align: center;
+    }
+}
+
+.box-shadow-none {
+    box-shadow: none !important;
+}
+
+.no-mat-chip-style {
+    padding: 0 !important;
+    background-color: #fff !important;
+    box-shadow: none !important;
+}

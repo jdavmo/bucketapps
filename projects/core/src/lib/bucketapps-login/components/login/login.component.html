@@ -1,0 +1,53 @@
+<div fxLayout="row" fxFill class="bucketapps-login">
+    <div fxFlex class="img-background-login">
+        <img src="../../assets/img/BUCKETAPPS.jpg" />
+    </div>
+    <div fxFlex="35">
+        <div fxLayout="column" fxFill layout-padding>
+            <div fxFlex="5"></div>
+            <div class="login-content" fxFlex>
+                <div class="img-bucketapps-logo" fxLayout="row" fxLayoutAlign="center center">
+                    <img src="../../assets/logos/bucketapps-gradient2.png" />
+                </div>
+                <div class="bucketapps-sign-text">
+                    <p>Hello there! Sign in and start managing</p>
+                </div>
+                <form>
+                    <div layout="row">
+                        <mat-form-field flex [formGroup]="loginForm">
+                            <input matInput placeholder="Email" formControlName="username">
+                            <mat-icon color="primary" matSuffix *ngIf="loginForm.controls.username.valid">check_circle</mat-icon>
+                        </mat-form-field>
+                    </div>
+                    <div layout="row">
+                        <mat-form-field flex [formGroup]="loginForm">
+                            <input matInput placeholder="Enter your password" [type]="isHide ? 'password' : 'text'" formControlName="password">
+                            <mat-icon color="primary" matSuffix (click)="isHide = !isHide">{{isHide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                        </mat-form-field>
+                    </div>
+                    <td-message *ngIf="isInvalidLogin" class="bgc-pink-50 tc-pink-600" sublabel="Oops! It looks like you may have forgotten your password."
+                        icon="error"></td-message>
+                    <div class="bucketapps-signin" fxLayout="row" fxLayoutAlign="center center">
+                        <div fxFlex="12"></div>
+                        <button flex mat-raised-button color="primary" [disabled]="!loginForm.valid" (click)="login()">Sign In</button>
+                        <div fxFlex="12"></div>
+                    </div>
+                    <div class="bucketapps-links-login" fxLayout="row" fxLayoutAlign="center center">
+                        <div fxFlex="20"></div>
+                        <div fxFlex>
+                            <a href="">Forgot password?</a>
+                        </div>
+                        <div fxFlex>
+                            <a href="">Register</a>
+                        </div>
+                        <div fxFlex="20"></div>
+                    </div>
+                </form>
+            </div>
+            <div fxFlex="20"></div>
+            <div class="bucketapps-rights" fxLayout="row" fxLayoutAlign="center center">
+                @2018 All Rights Reserved
+            </div>
+        </div>
+    </div>
+</div>
