@@ -1,13 +1,13 @@
 import { BucketappsCovalentModule } from './bucketapps-covalent.module';
 
 describe('BucketappsCovalentModule', () => {
-  let bucketappsCovalentModule: BucketappsCovalentModule;
+    let bucketappsCovalentModule: BucketappsCovalentModule;
 
-  beforeEach(() => {
-    bucketappsCovalentModule = new BucketappsCovalentModule();
-  });
+    beforeEach(() => {
+        bucketappsCovalentModule = new BucketappsCovalentModule();
+    });
 
-  it('should create an instance', () => {
-    expect(bucketappsCovalentModule).toBeTruthy();
-  });
+    it('should create an instance', () => {
+        expect(bucketappsCovalentModule).toBeTruthy();
+    });
 });

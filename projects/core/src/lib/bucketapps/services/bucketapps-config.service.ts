@@ -6,7 +6,6 @@ import { Injectable, Inject } from '@angular/core';
 export class BucketappsConfigService {
 
     constructor(@Inject('env') private env) {}
-
     /**
      * getConfig
      */

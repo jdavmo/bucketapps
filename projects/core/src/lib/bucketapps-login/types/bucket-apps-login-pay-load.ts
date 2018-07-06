@@ -14,11 +14,11 @@ export class BucketAppsLoginPayLoad {
         let loginPayLoad = new BucketAppsLoginPayLoad();
 
         loginPayLoad.grant_type = 'password';
-        loginPayLoad.client_secret = "";//CLIENT_SECRET;
+        loginPayLoad.client_secret = "";
         loginPayLoad.username = '';
         loginPayLoad.password = '';
         loginPayLoad.scope = '*';
-        loginPayLoad.client_id = 1; //CLIENT_ID;
+        loginPayLoad.client_id = 1;
 
         return loginPayLoad;
     }

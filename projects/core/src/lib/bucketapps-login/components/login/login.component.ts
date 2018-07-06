@@ -21,7 +21,9 @@ export class LoginComponent implements OnInit {
                 private _loadingService: TdLoadingService,
                 private _loginService: LoginService,
                 private _BucketappsConfigService: BucketappsConfigService) {
-
+        /**
+         * Register Loading
+         */
         this._loadingService.create({
             name: 'configFullscreenDemo',
             mode: LoadingMode.Indeterminate,
@@ -29,8 +31,16 @@ export class LoginComponent implements OnInit {
             color: 'accent',
         });
     }
-
+    /**
+     * Init Component
+     */
     ngOnInit() {
+        this.setUpForm();
+    }
+    /**
+     * Config login from
+     */
+    private setUpForm() {
         this.loginForm = new FormGroup({
             username: new FormControl('', [
                 Validators.required,
@@ -42,18 +52,14 @@ export class LoginComponent implements OnInit {
             ])
         });
     }
-
-    toggleConfigFullscreenDemo(): void {
-        this._loadingService.register('configFullscreenDemo');
-        setTimeout(() => {
-            this._loadingService.resolve('configFullscreenDemo');
-        }, 1500);
-    }
-
+    /**
+     * Do login
+     */
     login(): void {
         if (this.loginForm.valid) {
 
             this.isInvalidLogin = false;
+            // Creating PayLoad
             let login: BucketAppsLoginPayLoad = new BucketAppsLoginPayLoad();
             login = login.setDefault();
             login.username = this.loginForm.controls.username.value;
@@ -61,12 +67,12 @@ export class LoginComponent implements OnInit {
             login.client_id = this._BucketappsConfigService.getClientId();
             login.client_secret = this._BucketappsConfigService.getClientSecret();
 
-            //this._loadingService.register();
             this._loadingService.register('configFullscreenDemo');
+            // Request login
             this._loginService.create(login).subscribe((token: any) => {
                 // store token in the local storage
                 localStorage.setItem('token', token._body);
-                // Go to the inventory
+                // Go to the root url
                 this._router.navigate(['/']);
                 // Stop loading
                 this._loadingService.resolve('configFullscreenDemo');
@@ -74,7 +80,6 @@ export class LoginComponent implements OnInit {
                 err => this.logError(err, ""));
         }
     }
-
     /**
      * Handle the errors
      */
@@ -83,4 +88,3 @@ export class LoginComponent implements OnInit {
         this._loadingService.resolve('configFullscreenDemo');
     }
 }
-
