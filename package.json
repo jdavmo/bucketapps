@@ -1,6 +1,6 @@
 {
   "name": "bucketapps",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,6 +9,12 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "repository": "https://github.com/BucketApps/bucketapps",
+  "license": "MIT",
+  "author": "Julian David Moreno",
+  "contributors": [
+    "Julian David Moreno <jdavmo75@gmail.com"
+  ],
   "private": true,
   "dependencies": {
     "@angular/common": "^6.0.3",
