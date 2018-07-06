@@ -13,12 +13,22 @@ export class BucketappsConfigService {
     public getConfig() {
         return this.env;
     }
-
     /**
      * getApi
      */
     public getApi() {
-        return this.env;
+        return this.env.config.api;
     }
-
+    /**
+     * getClientId
+     */
+    public getClientId() {
+        return this.env.config.client_id;
+    }
+    /**
+     * getClientSecret
+     */
+    public getClientSecret() {
+        return this.env.config.client_secret;
+    }
 }

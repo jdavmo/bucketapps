@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { TdLoadingService, LoadingMode, LoadingType } from '@covalent/core';
 import { LoginService } from '../../services/login.service';
 import { BucketAppsLoginPayLoad } from '../../types';
+import { BucketappsConfigService } from '../../../bucketapps/services';
 
 @Component({
     selector: 'core-login',
@@ -16,12 +17,10 @@ export class LoginComponent implements OnInit {
     isHide: boolean = true;
     isInvalidLogin: boolean = false;
     
-
     constructor(private _router: Router,
                 private _loadingService: TdLoadingService,
                 private _loginService: LoginService,
-            //    private _BucketappsConfigService: BucketappsConfigService
-            ) {
+                private _BucketappsConfigService: BucketappsConfigService) {
 
         this._loadingService.create({
             name: 'configFullscreenDemo',
@@ -56,9 +55,11 @@ export class LoginComponent implements OnInit {
 
             this.isInvalidLogin = false;
             let login: BucketAppsLoginPayLoad = new BucketAppsLoginPayLoad();
-            login.setDefault();
+            login = login.setDefault();
             login.username = this.loginForm.controls.username.value;
             login.password = this.loginForm.controls.password.value;
+            login.client_id = this._BucketappsConfigService.getClientId();
+            login.client_secret = this._BucketappsConfigService.getClientSecret();
 
             //this._loadingService.register();
             this._loadingService.register('configFullscreenDemo');

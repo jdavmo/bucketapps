@@ -10,10 +10,9 @@ export class LoginService extends RESTService<any> {
                 private _BucketappsConfig: BucketappsConfigService) {
         
         super(_http, {
-            baseUrl: '',
+            baseUrl: _BucketappsConfig.getApi(),
             path: '/oauth/token',
         });
 
-        console.log("get config: ", this._BucketappsConfig.getConfig());
     }
 }
