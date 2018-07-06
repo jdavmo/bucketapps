@@ -18,10 +18,10 @@ import { BucketappsCovalentModule } from './bucketapps-covalent/bucketapps-coval
         BucketappsLoginModule
     ]
 })
-export class CoreModule {
+export class BucketAppsCoreModule {
     static forRoot(config: any): ModuleWithProviders {
         return {
-            ngModule: CoreModule,
+            ngModule: BucketAppsCoreModule,
             providers: [
                 { provide: 'env', useValue: config }
             ],
