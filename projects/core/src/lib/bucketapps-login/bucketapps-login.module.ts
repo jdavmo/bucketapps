@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginService } from './services/login.service';
+import { LoginService, LogoutService } from './services';
 import { LoginComponent } from './components/login/login.component';
 import { BucketappsLoginRoutingModule } from './bucketapps-login.routing';
 import { BucketappsModule } from '../bucketapps/bucketapps.module';
@@ -14,7 +14,7 @@ import { BucketappsCovalentModule } from '../bucketapps-covalent/bucketapps-cova
         BucketappsLoginRoutingModule,
         BucketappsModule
     ],
-    providers: [LoginService],
+    providers: [LoginService, LogoutService],
     declarations: [LoginComponent]
 })
 export class BucketappsLoginModule {}

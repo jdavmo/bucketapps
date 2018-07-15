@@ -7,7 +7,12 @@ export const environment = {
     config: {
         api: "<YOUR_API>",
         client_secret: "<YOUR_SECRET>",
-        client_id: 0
+        client_id: 0,
+        resource: {
+            point: "api",// = "api" or "web"
+            version: "<VERSION_API>",// = v1
+            app: "<APP_RESOURCE>" // = inventory
+        }
     }
 };
 
