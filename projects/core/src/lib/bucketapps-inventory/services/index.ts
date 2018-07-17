@@ -1,5 +1,5 @@
 export { ProductsService, ProductsData } from './products.service';
-export { TypesService, ITypes, ITypesData } from './types.service';
+export { ProductTypesService } from './product-types.service';
 export { PurchasesService, PurchasesData } from './purchases.service';
 export { InService, InData } from './in.service';
 export { InDetailService } from './inDetail.service';

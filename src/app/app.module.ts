@@ -4,7 +4,7 @@ import { NgModule, Type } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { routedComponents, routes } from './app-routing';
-import { CoreModule } from 'core';
+import { BucketAppsCoreModule } from 'core';
 import { HomeComponent } from './home/home.component';
 import { CovalentHttpModule, IHttpInterceptor } from '@covalent/http';
 import { RequestInterceptor } from './services/request.interceptor';
@@ -24,7 +24,7 @@ const httpInterceptorProviders: Type<any>[] = [
     RouterModule.forRoot(routes, { useHash: true }),
     BrowserModule,
     BrowserAnimationsModule,
-    CoreModule.forRoot(environment),
+    BucketAppsCoreModule.forRoot(environment),
     HttpClientModule,
     CovalentHttpModule.forRoot({
       interceptors: [{

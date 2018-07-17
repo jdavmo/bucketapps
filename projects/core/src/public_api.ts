@@ -14,6 +14,7 @@ export * from './lib/bucketapps/bucketapps.module';
  * bucketapps-inventory
  */
 export * from './lib/bucketapps-inventory/services';
+export * from './lib/bucketapps-inventory/types';
 export * from './lib/bucketapps-inventory/bucketapps-inventory.module';
 /*
  * bucketapps-login

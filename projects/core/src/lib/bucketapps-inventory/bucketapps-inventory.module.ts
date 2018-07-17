@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
     ProductsService,
-    TypesService,
+    ProductTypesService,
     PurchasesService,
     InService,
     InDetailService,
@@ -16,7 +16,7 @@ import {
     ],
     providers: [
         ProductsService,
-        TypesService,
+        ProductTypesService,
         PurchasesService,
         InService,
         InDetailService,

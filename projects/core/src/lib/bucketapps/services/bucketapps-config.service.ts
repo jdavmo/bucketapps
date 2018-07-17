@@ -56,7 +56,7 @@ export class BucketappsConfigService {
 
         resource += this.getApiResourcePoint() ? this.getApiResourcePoint() + "/" : "";
         resource += this.getApiResourceVersion() ? this.getApiResourceVersion() + "/" : "";
-        resource += this.getApiResourceApp() ? this.getApiResourceApp() + "/" : "";
+        resource += this.getApiResourceApp() ? this.getApiResourceApp() : "";
 
         return resource;
     }
