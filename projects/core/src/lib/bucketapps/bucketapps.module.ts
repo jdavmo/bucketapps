@@ -1,12 +1,12 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BucketappsConfigService, OctoService } from './services';
+import { BucketappsConfigService, OctoService, UserService } from './services';
 
 @NgModule({
     imports: [
         CommonModule
     ],
     declarations: [],
-    providers: [BucketappsConfigService, OctoService]
+    providers: [BucketappsConfigService, OctoService, UserService]
 })
 export class BucketappsModule {}
