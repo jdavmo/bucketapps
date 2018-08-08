@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Response } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
 import { BucketappsConfigService } from './bucketapps-config.service';
 import { HttpInterceptorService, RESTService } from '@covalent/http';
 
