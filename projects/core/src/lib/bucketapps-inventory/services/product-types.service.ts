@@ -41,77 +41,79 @@ export class ProductTypesService extends RESTService<any> {
     /**
      * Retrives one
      */
-    /*public getOne(accountId: string, id: string): Observable<ProductTypeDescriptor> {
+    public getOne(accountId: string, id: string): Observable<ProductTypeDescriptor> {
         return new Observable(observable => {
             let url = accountId + "/" + ProductTypesService.resource + "/" + id;
-            super.request("GET", url)
-                .asJson()
-                .execute()
-                .subscribe(response => {
-                    observable.next(ProductTypeDescriptor.import(response));
-                    observable.complete();
-                }, error => {
-                    observable.error(error);
-                    observable.complete();
-                });
+            this._http.get(super.buildUrl(url), {
+                headers: new Headers()
+            })
+            .pipe(
+                map(data => data.json()),
+                catchError(e => throwError(e))
+            )
+            .subscribe(response => {
+                observable.next(ProductTypeDescriptor.import(response));
+                observable.complete();
+            });
         });
-    }*/
+    }
     /**
      * Deletes one
      */
-    /*public deleteOne(accountId: string, id: string): Observable<any> {
+    public deleteOne(accountId: string, id: string): Observable<any> {
         return new Observable(observable => {
             let url = accountId + "/" + ProductTypesService.resource + "/" + id;
-            super.request("DELETE", url)
-                .asJson()
-                .execute()
-                .subscribe(response => {
-                    observable.next(response);
-                    observable.complete();
-                }, error => {
-                    observable.error(error);
-                    observable.complete();
-                });
+            this._http.delete(super.buildUrl(url), {
+                headers: new Headers()
+            })
+            .pipe(
+                map(data => data.json()),
+                catchError(e => throwError(e))
+            )
+            .subscribe(response => {
+                observable.next(response);
+                observable.complete();
+            });
         });
-    }*/
+    }
     /**
      * Creates a new
      */
-    /*public create(accountId: string, otisOption: object): Observable<ProductTypeDescriptor> {
+    public createOne(accountId: string, data: ProductTypeDescriptor): Observable<ProductTypeDescriptor> {
         return new Observable(observable => {
             let url = accountId + "/" + ProductTypesService.resource;
-            super.request("POST", url)
-                .data(otisOption)
-                .asJson()
-                .execute()
-                .subscribe(response => {
-                    observable.next(ProductTypeDescriptor.import(response));
-                    observable.complete();
-                }, error => {
-                    observable.error(error);
-                    observable.complete();
-                });
+            this._http.post(super.buildUrl(url), data, {
+                headers: new Headers()
+            })
+            .pipe(
+                map(data => data.json()),
+                catchError(e => throwError(e))
+            )
+            .subscribe(response => {
+                observable.next(ProductTypeDescriptor.import(response));
+                observable.complete();
+            });
         });
-    }*/
+    }
 
     /**
      * Update
      */
-    /*public update(accountId: string, id: string, otisOption: object): Observable<ProductTypeDescriptor> {
+    public updateOne(accountId: string, id: string, data: ProductTypeDescriptor): Observable<any> {
         return new Observable(observable => {
             let url = accountId + "/" + ProductTypesService.resource + "/" + id;
-            super.request("PUT", url)
-                .data(otisOption)
-                .asJson()
-                .execute()
-                .subscribe(response => {
-                    observable.next(ProductTypeDescriptor.import(response));
-                    observable.complete();
-                }, error => {
-                    observable.error(error);
-                    observable.complete();
-                });
+            this._http.patch(super.buildUrl(url), data, {
+                headers: new Headers()
+            })
+            .pipe(
+                map(data => data.json()),
+                catchError(e => throwError(e))
+            )
+            .subscribe(response => {
+                observable.next(response);
+                observable.complete();
+            });
         });
-    }*/
+    }
 
 }
