@@ -10,6 +10,7 @@ export class ProductTypeDescriptor {
     public updated_at: string;
     public userName: string;
     public uuid: string;
+    public tags: Array<string> = [];
 
     constructor() {}
 
@@ -28,6 +29,7 @@ export class ProductTypeDescriptor {
         productType.updated_at = rawData.hasOwnProperty('updated_at') ? rawData.updated_at : null;
         productType.userName = rawData.hasOwnProperty('userName') ? rawData.userName : null;
         productType.uuid = rawData.hasOwnProperty('uuid') ? rawData.uuid : null;
+        productType.tags = rawData.hasOwnProperty('tags') ? rawData.tags : [];
 
         return productType;
     }
