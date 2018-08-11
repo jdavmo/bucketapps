@@ -21,9 +21,9 @@ export class ProductTypesService extends RESTService<any> {
     /**
      *  Retrieves all
      */
-    public getAll(accountId: string, searchParams: any = null): Observable<ProductTypeSnapshot> {
+    public getAll(brandId: string, searchParams: any = null): Observable<ProductTypeSnapshot> {
         return new Observable(observable => {
-            let url = accountId + "/" + ProductTypesService.resource;
+            let url = brandId + "/" + ProductTypesService.resource;
             this._http.get(super.buildUrl(url, searchParams), {
                 headers: new Headers()
             })
@@ -41,9 +41,9 @@ export class ProductTypesService extends RESTService<any> {
     /**
      * Retrives one
      */
-    public getOne(accountId: string, id: string): Observable<ProductTypeDescriptor> {
+    public getOne(brandId: string, id: string): Observable<ProductTypeDescriptor> {
         return new Observable(observable => {
-            let url = accountId + "/" + ProductTypesService.resource + "/" + id;
+            let url = brandId + "/" + ProductTypesService.resource + "/" + id;
             this._http.get(super.buildUrl(url), {
                 headers: new Headers()
             })
@@ -60,9 +60,9 @@ export class ProductTypesService extends RESTService<any> {
     /**
      * Deletes one
      */
-    public deleteOne(accountId: string, id: string): Observable<any> {
+    public deleteOne(brandId: string, id: string): Observable<any> {
         return new Observable(observable => {
-            let url = accountId + "/" + ProductTypesService.resource + "/" + id;
+            let url = brandId + "/" + ProductTypesService.resource + "/" + id;
             this._http.delete(super.buildUrl(url), {
                 headers: new Headers()
             })
@@ -79,9 +79,9 @@ export class ProductTypesService extends RESTService<any> {
     /**
      * Creates a new
      */
-    public createOne(accountId: string, data: ProductTypeDescriptor): Observable<ProductTypeDescriptor> {
+    public createOne(brandId: string, data: ProductTypeDescriptor): Observable<ProductTypeDescriptor> {
         return new Observable(observable => {
-            let url = accountId + "/" + ProductTypesService.resource;
+            let url = brandId + "/" + ProductTypesService.resource;
             this._http.post(super.buildUrl(url), data, {
                 headers: new Headers()
             })
@@ -99,9 +99,9 @@ export class ProductTypesService extends RESTService<any> {
     /**
      * Update
      */
-    public updateOne(accountId: string, id: string, data: ProductTypeDescriptor): Observable<any> {
+    public updateOne(brandId: string, id: string, data: ProductTypeDescriptor): Observable<any> {
         return new Observable(observable => {
-            let url = accountId + "/" + ProductTypesService.resource + "/" + id;
+            let url = brandId + "/" + ProductTypesService.resource + "/" + id;
             this._http.patch(super.buildUrl(url), data, {
                 headers: new Headers()
             })
