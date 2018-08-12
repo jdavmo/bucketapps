@@ -39,9 +39,9 @@ export class OctoService {
                 color: 'accent',
             });
             // this language will be used as a fallback when a translation isn't found in the current language
-            _translate.setDefaultLang('es');
+            // _translate.setDefaultLang('es');
             // the lang to use, if the lang isn't available, it will use the current loader to get them
-            _translate.use('es');
+            // _translate.use('es');
     }
 
     colors: any[] = [{a: 'red'},{b: 'pink'},{c: 'purple'},{d: 'deep-purple'},
