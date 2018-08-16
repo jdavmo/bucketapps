@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers } from '@angular/http';
 import { HttpInterceptorService, RESTService } from '@covalent/http';
-import { BucketappsConfigService } from '../../bucketapps/services';
+import { BucketappsConfigService } from '../../bucketapps/services/bucketapps-config.service';
 import { ProjectsSnapshot, ProjectsDescriptor } from '../types';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from "rxjs/operators";
