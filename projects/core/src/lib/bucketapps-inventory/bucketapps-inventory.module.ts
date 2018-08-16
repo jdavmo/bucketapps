@@ -6,8 +6,7 @@ import {
     PurchasesService,
     InService,
     InDetailService,
-    OutDetailService,
-    OutService
+    OutDetailService
 } from './services';
 
 @NgModule({
@@ -20,8 +19,7 @@ import {
         PurchasesService,
         InService,
         InDetailService,
-        OutDetailService,
-        OutService
+        OutDetailService
     ],
     declarations: []
 })

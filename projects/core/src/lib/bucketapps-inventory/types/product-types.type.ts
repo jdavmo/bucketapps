@@ -52,7 +52,7 @@ export class ProductTypeSnapshot {
      *  @method ProductTypeSnapshot.import
      *
      *  This method expects to receive the raw object response from type endpoint
-     *  /api/v1/inventroy{brandId}/types
+     *  /api/v1/inventroy/{brandId}/types
      *  It returns a populated instance of type ProductTypeSnapshot.
      */
     public static import(rawData: any) {

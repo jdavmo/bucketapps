@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { Headers } from '@angular/http';
 import { HttpInterceptorService, RESTService } from '@covalent/http';
 import { BucketappsConfigService } from '../../bucketapps/services';
-import { InDetailSnapshot, InDetailDescriptor } from '../types';
+import { ProjectsSnapshot, ProjectsDescriptor } from '../types';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from "rxjs/operators";
 
 @Injectable()
-export class InDetailService extends RESTService<any> {
+export class ProjectsService extends RESTService<any> {
 
-    static resource: string = "indetail";
+    static resource: string = "projects";
 
     constructor(private _http: HttpInterceptorService, private _BucketappsConfig: BucketappsConfigService) {
         super(_http, {
@@ -21,9 +21,9 @@ export class InDetailService extends RESTService<any> {
     /**
      *  Retrieves all
      */
-    public getAll(brandId: string, searchParams: any = null): Observable<InDetailSnapshot> {
+    public getAll(brandId: string, searchParams: any = null): Observable<ProjectsSnapshot> {
         return new Observable(observable => {
-            let url = brandId + "/" + InDetailService.resource;
+            let url = brandId + "/" + ProjectsService.resource;
             this._http.get(super.buildUrl(url, searchParams), {
                 headers: new Headers()
             })
@@ -32,7 +32,7 @@ export class InDetailService extends RESTService<any> {
                 catchError(e => throwError(e))
             )
             .subscribe(response => {
-                observable.next(InDetailSnapshot.import(response));
+                observable.next(ProjectsSnapshot.import(response));
                 observable.complete();
             });
         });
@@ -41,9 +41,9 @@ export class InDetailService extends RESTService<any> {
     /**
      * Retrives one
      */
-    public getOne(brandId: string, id: string): Observable<InDetailDescriptor> {
+    public getOne(brandId: string, id: string): Observable<ProjectsDescriptor> {
         return new Observable(observable => {
-            let url = brandId + "/" + InDetailService.resource + "/" + id;
+            let url = brandId + "/" + ProjectsService.resource + "/" + id;
             this._http.get(super.buildUrl(url), {
                 headers: new Headers()
             })
@@ -52,7 +52,7 @@ export class InDetailService extends RESTService<any> {
                 catchError(e => throwError(e))
             )
             .subscribe(response => {
-                observable.next(InDetailDescriptor.import(response));
+                observable.next(ProjectsDescriptor.import(response));
                 observable.complete();
             });
         });
@@ -62,7 +62,7 @@ export class InDetailService extends RESTService<any> {
      */
     public deleteOne(brandId: string, id: string): Observable<any> {
         return new Observable(observable => {
-            let url = brandId + "/" + InDetailService.resource + "/" + id;
+            let url = brandId + "/" + ProjectsService.resource + "/" + id;
             this._http.delete(super.buildUrl(url), {
                 headers: new Headers()
             })
@@ -79,9 +79,9 @@ export class InDetailService extends RESTService<any> {
     /**
      * Creates a new
      */
-    public createOne(brandId: string, data: InDetailDescriptor): Observable<InDetailDescriptor> {
+    public createOne(brandId: string, data: ProjectsDescriptor): Observable<ProjectsDescriptor> {
         return new Observable(observable => {
-            let url = brandId + "/" + InDetailService.resource;
+            let url = brandId + "/" + ProjectsService.resource;
             this._http.post(super.buildUrl(url), data, {
                 headers: new Headers()
             })
@@ -90,7 +90,7 @@ export class InDetailService extends RESTService<any> {
                 catchError(e => throwError(e))
             )
             .subscribe(response => {
-                observable.next(InDetailDescriptor.import(response));
+                observable.next(ProjectsDescriptor.import(response));
                 observable.complete();
             });
         });
@@ -99,9 +99,9 @@ export class InDetailService extends RESTService<any> {
     /**
      * Update
      */
-    public updateOne(brandId: string, id: string, data: InDetailDescriptor): Observable<any> {
+    public updateOne(brandId: string, id: string, data: ProjectsDescriptor): Observable<any> {
         return new Observable(observable => {
-            let url = brandId + "/" + InDetailService.resource + "/" + id;
+            let url = brandId + "/" + ProjectsService.resource + "/" + id;
             this._http.patch(super.buildUrl(url), data, {
                 headers: new Headers()
             })

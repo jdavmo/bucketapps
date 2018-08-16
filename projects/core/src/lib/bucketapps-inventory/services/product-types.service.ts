@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Response, Headers } from '@angular/http';
+import { Headers } from '@angular/http';
 import { HttpInterceptorService, RESTService } from '@covalent/http';
 import { BucketappsConfigService } from '../../bucketapps/services';
 import { ProductTypeSnapshot, ProductTypeDescriptor } from '../types';
