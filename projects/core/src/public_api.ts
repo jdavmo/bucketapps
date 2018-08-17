@@ -9,6 +9,7 @@ export * from './lib/core.module';
  * bucketapps
  */
 export * from './lib/bucketapps/services';
+export * from './lib/bucketapps/types';
 export * from './lib/bucketapps/bucketapps.module';
 /*
  * bucketapps-inventory
