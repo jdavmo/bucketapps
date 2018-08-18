@@ -17,6 +17,7 @@ import {
     MatSlideToggleModule, MatInputModule, MatCheckboxModule,
     MatToolbarModule, MatSnackBarModule, MatSidenavModule,
     MatTabsModule, MatSelectModule, MatChipsModule, MatRadioModule,
+    MatProgressBarModule
 } from '@angular/material';
 
 const ANGULAR_MODULES: any[] = [
@@ -33,6 +34,7 @@ const MATERIAL_MODULES: any[] = [
     MatSlideToggleModule, MatInputModule, MatCheckboxModule,
     MatToolbarModule, MatSnackBarModule, MatSidenavModule,
     MatTabsModule, MatSelectModule, MatChipsModule, MatRadioModule,
+    MatProgressBarModule
 ];
 
 const COVALENT_MODULES: any[] = [
