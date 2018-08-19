@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Http, HttpModule } from '@angular/http';
+import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule, } from '@angular/forms';
 import { FlexLayoutModule, } from '@angular/flex-layout';
@@ -17,7 +17,7 @@ import {
     MatSlideToggleModule, MatInputModule, MatCheckboxModule,
     MatToolbarModule, MatSnackBarModule, MatSidenavModule,
     MatTabsModule, MatSelectModule, MatChipsModule, MatRadioModule,
-    MatProgressBarModule
+    MatProgressBarModule, MatExpansionModule, MatTableModule
 } from '@angular/material';
 
 const ANGULAR_MODULES: any[] = [
@@ -34,7 +34,7 @@ const MATERIAL_MODULES: any[] = [
     MatSlideToggleModule, MatInputModule, MatCheckboxModule,
     MatToolbarModule, MatSnackBarModule, MatSidenavModule,
     MatTabsModule, MatSelectModule, MatChipsModule, MatRadioModule,
-    MatProgressBarModule
+    MatProgressBarModule, MatExpansionModule, MatTableModule
 ];
 
 const COVALENT_MODULES: any[] = [
