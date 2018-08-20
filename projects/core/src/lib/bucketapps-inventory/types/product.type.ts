@@ -19,6 +19,7 @@ export class ProductDescriptor {
     public typeName: string;
     public type_id: string;
     public weight_linear_meter: string;
+    public packages: string;
 
     constructor() {}
 
@@ -42,6 +43,7 @@ export class ProductDescriptor {
         product.measure = rawData.hasOwnProperty('measure') ? rawData.measure : null;
         product.reference = rawData.hasOwnProperty('reference') ? rawData.reference : null;
         product.total = rawData.hasOwnProperty('total') ? rawData.total : null;
+        product.packages = rawData.hasOwnProperty('packages') ? rawData.packages : null;
         product.typeName = rawData.hasOwnProperty('typeName') ? rawData.typeName : null;
         product.type_id = rawData.hasOwnProperty('type_id') ? rawData.type_id : null;
         product.weight_linear_meter = rawData.hasOwnProperty('weight_linear_meter') ? rawData.weight_linear_meter : null;
