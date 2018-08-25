@@ -178,4 +178,21 @@ export class OctoService {
             marginRight: 7
         }
     }
+
+    addTag(newTag: string, actualTags: string) {
+        let tags: any;
+        let alreadyThere: any;
+        if (actualTags) {
+            tags = actualTags.split(",");
+        }
+        if (tags) {
+            alreadyThere = tags.some(item => item === newTag);
+        }
+        if (!alreadyThere && actualTags) {
+            actualTags = actualTags + "," + newTag;
+        } else if (!tags) {
+            actualTags = newTag;
+        }
+        return actualTags;
+    }
 }
