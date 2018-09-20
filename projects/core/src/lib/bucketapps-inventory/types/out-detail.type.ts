@@ -18,6 +18,9 @@ export class OutDetailDescriptor {
     public project_id: string;
     public quantity: string;
     public quantity_bad: string;
+    public contractorName: string;
+    public barcode: string;
+    public projectName: string;
 
     constructor() {}
 
@@ -44,6 +47,9 @@ export class OutDetailDescriptor {
         outdetail.project_id = rawData.hasOwnProperty('project_id') ? rawData.project_id : null;
         outdetail.quantity = rawData.hasOwnProperty('quantity') ? rawData.quantity : null;
         outdetail.quantity_bad = rawData.hasOwnProperty('quantity_bad') ? rawData.quantity_bad : null;
+        outdetail.contractorName = rawData.hasOwnProperty('contractorName') ? rawData.contractorName : null;
+        outdetail.barcode = rawData.hasOwnProperty('barcode') ? rawData.barcode : null;
+        outdetail.projectName = rawData.hasOwnProperty('projectName') ? rawData.projectName : null;
 
         return outdetail;
     }

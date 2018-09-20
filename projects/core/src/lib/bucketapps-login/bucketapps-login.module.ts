@@ -1,6 +1,5 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginService, LogoutService } from './services';
 import { LoginComponent } from './components/login/login.component';
 import { BucketappsLoginRoutingModule } from './bucketapps-login.routing';
