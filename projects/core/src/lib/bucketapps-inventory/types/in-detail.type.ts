@@ -21,11 +21,11 @@ export class InDetailDescriptor {
     public product_name: string;
     public purchase_barcode: string;
     public purchase_name: string;
-    public quantity: string;
-    public quantity_bad: string;
-    public quantity_out: string;
-    public totalTransactionsOut: string;
-    public total: string;
+    public quantity: number;
+    public quantity_bad: number;
+    public quantity_out: number;
+    public totalTransactionsOut: number;
+    public total: number;
 
     constructor() {}
 

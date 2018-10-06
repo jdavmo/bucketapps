@@ -37,7 +37,6 @@ export class InDetailService extends RESTService<any> {
             });
         });
     }
-
     /**
      * Retrives one
      */
@@ -46,6 +45,26 @@ export class InDetailService extends RESTService<any> {
             let url = brandId + "/" + InDetailService.resource + "/" + id;
             this._http.get(super.buildUrl(url), {
                 headers: new Headers()
+            })
+            .pipe(
+                map(data => data.json()),
+                catchError(e => throwError(e))
+            )
+            .subscribe(response => {
+                observable.next(InDetailDescriptor.import(response));
+                observable.complete();
+            });
+        });
+    }
+    /**
+     * Retrives one
+     */
+    public getBarcode(brandId: string, params: Object): Observable<InDetailDescriptor> {
+        return new Observable(observable => {
+            let url = brandId + "/" + InDetailService.resource + "/scan/barcode";
+            this._http.get(super.buildUrl(url), {
+                headers: new Headers(),
+                params: params
             })
             .pipe(
                 map(data => data.json()),
