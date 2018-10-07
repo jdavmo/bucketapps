@@ -41,9 +41,9 @@ export class UsersService extends RESTService<any> {
     /**
      *  Retrieves one user
      */
-    public getOne(userId: number): Observable<UserDescriptor> {
+    public getOne(brandId: string, userId: string): Observable<UserDescriptor> {
         return new Observable(observable => {
-            let url = UsersService.resource + '/' + userId;
+            let url = brandId + "/" + UsersService.resource + '/' + userId;
             this._http.get(super.buildUrl(url), {
                 headers: new Headers()
             })
