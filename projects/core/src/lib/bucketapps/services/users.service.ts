@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Headers } from '@angular/http';
 import { HttpInterceptorService, RESTService } from '@covalent/http';
 import { BucketappsConfigService } from '../../bucketapps/services/bucketapps-config.service';
-import { UsersSnapshot } from '../types';
+import { UsersSnapshot, UserDescriptor } from '../types';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from "rxjs/operators";
 
@@ -33,6 +33,26 @@ export class UsersService extends RESTService<any> {
             )
             .subscribe(response => {
                 observable.next(UsersSnapshot.import(response));
+                observable.complete();
+            });
+        });
+    }
+
+    /**
+     *  Retrieves one user
+     */
+    public getOne(userId: number): Observable<UserDescriptor> {
+        return new Observable(observable => {
+            let url = UsersService.resource + '/' + userId;
+            this._http.get(super.buildUrl(url), {
+                headers: new Headers()
+            })
+            .pipe(
+                map(data => data.json()),
+                catchError(e => throwError(e))
+            )
+            .subscribe(response => {
+                observable.next(UserDescriptor.import(response));
                 observable.complete();
             });
         });
