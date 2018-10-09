@@ -1,5 +1,5 @@
-export * from './bucketapps-config.service';
-export * from './octo.service';
-export * from './user.service';
-export * from './projects.service';
-export * from './users.service';
+export { BucketappsConfigService } from './bucketapps-config.service';
+export { ResponseList, EmitterService, OctoService } from './octo.service';
+export { UserService } from './user.service';
+export { ProjectsService } from './projects.service';
+export { UsersService } from './users.service';

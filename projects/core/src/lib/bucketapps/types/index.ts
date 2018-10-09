@@ -1,2 +1,2 @@
-export * from './projects.type';
-export * from './users.type';
+export { ProjectsDescriptor, ProjectsSnapshot } from './projects.type';
+export { UserDescriptor, UsersSnapshot } from './users.type';
